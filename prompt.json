@@ -1,0 +1,59 @@
+{
+  "model": "gpt-5.4-mini",
+  "input": [
+    {
+      "role": "developer",
+      "content": [
+        {
+          "type": "input_text",
+          "text": "This is a test."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "input_text",
+          "text": "hi"
+        }
+      ]
+    }
+  ],
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "reasoning": {
+    "effort": "medium",
+    "summary": "auto"
+  },
+  "context_management": [
+    {
+      "type": "compaction",
+      "compact_threshold": 300000
+    }
+  ],
+  "tools": [
+    {
+      "type": "web_search",
+      "user_location": {
+        "type": "approximate"
+      },
+      "search_context_size": "medium"
+    },
+    {
+      "type": "shell",
+      "environment": {
+        "type": "local"
+      }
+    }
+  ],
+  "store": true,
+  "include": [
+    "reasoning.encrypted_content",
+    "web_search_call.action.sources"
+  ]
+}
